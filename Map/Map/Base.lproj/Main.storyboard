@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="20h-Mi-8Bo">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailButton" destination="gPA-F4-jed" id="j3a-Hk-KR7"/>
+                        <outlet property="myMapView" destination="20h-Mi-8Bo" id="kt2-hF-f6M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="gPA-F4-jed">
+                    <rect key="frame" x="12" y="4" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="detailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9D0-H5-L7s"/>
+                        <segue destination="oUE-OI-oR9" kind="modal" id="7Ry-TS-uC6"/>
+                    </connections>
+                </button>
+            </objects>
+            <point key="canvasLocation" x="231" y="333"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="oL3-if-ylm">
+            <objects>
+                <viewController id="oUE-OI-oR9" customClass="WebViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Xd-jU-VxV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="tfw-rX-t2o">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="978"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FCz-RO-eCB">
+                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="back" id="fMB-vS-n2r">
+                                        <connections>
+                                            <action selector="nextButton:" destination="oUE-OI-oR9" id="IbN-U3-OkT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="next" id="RAe-lB-bd2">
+                                        <connections>
+                                            <action selector="backButton:" destination="oUE-OI-oR9" id="vqS-kz-9Jn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="refresh" id="1Kh-3f-eFs">
+                                        <connections>
+                                            <action selector="refreshButton:" destination="oUE-OI-oR9" id="bYJ-8Q-OpG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="stop" id="kIk-AT-nwz">
+                                        <connections>
+                                            <action selector="stopButton:" destination="oUE-OI-oR9" id="TZQ-XP-ReI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myWebView" destination="tfw-rX-t2o" id="0xi-XC-AEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytn-9A-SY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1245" y="358"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
